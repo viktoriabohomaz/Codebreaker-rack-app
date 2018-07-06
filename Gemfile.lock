@@ -1,0 +1,44 @@
+GIT
+  remote: https://github.com/zlayaa/codebreaker
+  revision: d33100307fff2af8bc337ca9b3b645b324307a0d
+  specs:
+    codebreaker (0.1.0)
+
+PATH
+  remote: .
+  specs:
+    codebreaker_rack (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    diff-lcs (1.3)
+    rack (2.0.5)
+    rake (10.5.0)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+    rspec-core (3.7.1)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  codebreaker!
+  codebreaker_rack!
+  rack
+  rake (~> 10.0)
+  rspec
+
+BUNDLED WITH
+   1.16.2
