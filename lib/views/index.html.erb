@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <title>Codebreaker</title>
+<!--  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <link href="css/animate.css" type="text/css" rel="stylesheet"/>
+  <link href="css/waypoints.css" type="text/css" rel="stylesheet"/>
+  <script src="js/jquery.waypoints.min.js" type="text/javascript"></script>
+  <script src="js/waypoints.js" type="text/javascript"></script>-->
+</head>
+<body>
+
+    <div class ="content">
+        <h1>CODEBREACKER</h1>
+      <div class= "box" id ="rules">
+        <p>You must create a secret code of four numbers between 1 and 6.</p>
+        <p>A + indicates an exact match: one of the numbers in the guess is the same as one of the numbers in the secret code and in the same position.</p>
+        <p>A - indicates a number match: one of the numbers in the guess is the same as one of the numbers in the secret code but in a different position.</p>
+      </div>
+      <% unless game %>
+        <a href="/start"><button>Start game</button></a>
+      <% else %>
+        <h2>Your guess: <%= answer_user %></h2>
+        <h2>Checking:
+          <% game.check_result %>
+          <%= @result.join('')%>
+        </h2>
+        </div>
+
+        <% unless game.win? false%>
+          <% if game.hint.zero? %>
+            <p class="hint">Hint: Secret code contains: <%= hint %></p>
+          <% end %>
+
+          <p class="hint">Type your secret code or "hint": </p>
+        <form method="post" action="/update_answer">
+          <input name="answer_user" autofocus=true type="text" pattern="^[1-6]{4}|hint$">
+          <input type="submit" value="Try!">
+        </form>
+
+<!--<section class="answer">
+  <form method="post" action="/check_result">
+    <input type="text" name = "answer_user" required pattern="^[1-6]{4}$" class="question" id="nme" required autocomplete="off"/>
+    <label for="nme"><span>PUT YOUR ANSWER HERE</span></label>
+
+    <div class="guess-progress">
+					<span class="progress">
+          </span>
+    </div>
+    <input id="check_result" type="submit" value="CHECK RESULT!" />
+  </form>
+</section>-->
+        <% end %>
+          <a href="/start"><button>New game</button></a>
+        <% end %>
+</body>
+</html>
